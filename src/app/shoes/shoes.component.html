@@ -1,0 +1,47 @@
+<h1>Product</h1>
+
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>Model</nz-form-label>
+    <nz-form-control [nzSpan]="12">
+      <input nz-input formControlName="model" placeholder="Adidas" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>Color</nz-form-label>
+    <nz-form-control [nzSpan]="12">
+      <input nz-input formControlName="color" placeholder="White" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="7" nzRequired>Price</nz-form-label>
+    <nz-form-control [nzSpan]="12">
+      <input nz-input formControlName="price" placeholder="Technical" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control [nzXs]="{ span: 24, offset: 0 }" [nzSm]="{ span: 16, offset: 8 }">
+      <button nz-button nzType="primary">Submit</button>
+    </nz-form-control>
+  </nz-form-item>
+
+</form>
+
+<table border="1" cellpadding="10" cellspacing="0">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Model</th>
+      <th>Color</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let shoes of shoes">
+      <td>{{ shoes.id }}</td>
+      <td>{{ shoes.model }}</td>
+      <td>{{ shoes.color }}</td>
+      <td>{{ shoes.price }}</td>
+    </tr>
+  </tbody>
+</table>
